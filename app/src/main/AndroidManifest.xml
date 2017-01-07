@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".view.OptionModeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +21,6 @@
             </intent-filter>
         </activity>
         <service android:name=".notification.AppService"/>
-        <activity android:name=".view.OptionModeActivity" />
         <activity android:name=".view.CountdownActivity" />
         <activity android:name=".view.JoinTeamActivity" />
         <activity android:name=".view.CreateTeamActivity" />
