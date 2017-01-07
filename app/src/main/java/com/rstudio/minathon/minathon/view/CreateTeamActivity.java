@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -35,10 +36,6 @@ public class CreateTeamActivity extends AppCompatActivity {
     EditText edtDuration;
     @BindView(R.id.radioRing)
     RadioGroup radioGroup;
-//    @BindView(R.id.btnCreateam)
-//    Button btnCreateam;
-    @BindView(R.id.btnSetTime)
-    Button btnSetTime;
     @BindView(R.id.ckbCrazyDance)
     CheckBox ckbCrazyDance;
     @BindView(R.id.ckbDinner)
@@ -60,6 +57,9 @@ public class CreateTeamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_team);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
@@ -74,7 +74,7 @@ public class CreateTeamActivity extends AppCompatActivity {
     }
 
     private void getClickButton() {
-        btnSetTime.setOnClickListener(new View.OnClickListener() {
+        edtDuration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog mTimePicker;
@@ -102,7 +102,7 @@ public class CreateTeamActivity extends AppCompatActivity {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 mHours = hourOfDay;
                 mMinutes = minute;
-                btnSetTime.setText(mHours + ":" + mMinutes);
+                edtDuration.setText(mHours + ":" + mMinutes);
             }
         }, mHours, mMinutes, true);
     }
