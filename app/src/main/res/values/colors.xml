@@ -7,4 +7,7 @@
     <color name="blackColor">#000000</color>
     <color name="whiteColor">#ffffff</color>
     <color name="background">#6995DD</color>
+
+    <color name="backgroundSetTime">#00000000</color>
+    <color name="whiteColorHint">#aaffffff</color>
 </resources>

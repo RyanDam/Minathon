@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -30,10 +31,12 @@ import butterknife.ButterKnife;
 public class CreateTeamActivity extends AppCompatActivity {
     @BindView(R.id.edtUserNameTeamLead)
     EditText edtUserName;
+    @BindView(R.id.edtDuration)
+    EditText edtDuration;
     @BindView(R.id.radioRing)
     RadioGroup radioGroup;
-    @BindView(R.id.btnCreateam)
-    Button btnCreateam;
+//    @BindView(R.id.btnCreateam)
+//    Button btnCreateam;
     @BindView(R.id.btnSetTime)
     Button btnSetTime;
     @BindView(R.id.ckbCrazyDance)
@@ -44,6 +47,8 @@ public class CreateTeamActivity extends AppCompatActivity {
     CheckBox ckbMoney;
     @BindView(R.id.ckbNude)
     CheckBox ckbNude;
+    @BindView(R.id.fab_create_team)
+    FloatingActionButton fabCreateTeam;
 
     private int mHours = 0;
     private int mMinutes = 10;
@@ -54,9 +59,12 @@ public class CreateTeamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_team);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ButterKnife.bind(this);
         getClickButton();
-        btnSetTime.setText(mHours + ":" + mMinutes);
+        edtDuration.setText(mHours + ":" + mMinutes);
 
         lstCheckBox = new ArrayList<>();
         lstCheckBox.add(ckbCrazyDance);
@@ -65,7 +73,7 @@ public class CreateTeamActivity extends AppCompatActivity {
         lstCheckBox.add(ckbNude);
     }
 
-    private void getClickButton(){
+    private void getClickButton() {
         btnSetTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +84,7 @@ public class CreateTeamActivity extends AppCompatActivity {
             }
         });
 
-        btnCreateam.setOnClickListener(new View.OnClickListener() {
+        fabCreateTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Hihi", Toast.LENGTH_SHORT).show();
@@ -88,7 +96,7 @@ public class CreateTeamActivity extends AppCompatActivity {
 
 
     public Dialog onCreateDialogTimePicker() {
-        return new TimePickerDialog(this,new TimePickerDialog.OnTimeSetListener() {
+        return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -108,7 +116,7 @@ public class CreateTeamActivity extends AppCompatActivity {
         group.duration = mHours * 60 + mMinutes;
         group.penaltyName = "";
 
-        for (CheckBox x: lstCheckBox) {
+        for (CheckBox x : lstCheckBox) {
             if (x.isChecked()) {
                 group.penaltyName += x.getText();
                 group.penaltyName += "|";
