@@ -18,7 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <service android:name=".notification.AppService"/>
+=======
+        <activity android:name=".view.OptionModeActivity" />
+        <activity android:name=".view.CountdownActivity" />
+        <activity android:name=".view.JoinTeamActivity" />
+        <activity android:name=".view.CreateTeamActivity"></activity>
+>>>>>>> master
     </application>
 
 </manifest>
