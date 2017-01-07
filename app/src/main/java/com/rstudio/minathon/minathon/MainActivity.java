@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static Context appInstance;
     public static int appState = 1;
+    private Notifier mNotifier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +31,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = new Intent(this, AppService.class);
         i.putExtra("duration", 60000);
         startService(i);
-//        Notifier notifier = new Notifier(this);
-//        notifier.build("Hello", "Holle");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         appState = 0;
+
+        mNotifier = new Notifier(this);
+        mNotifier.build("Hello", "Holle");
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
         appState = 1;
+
+        if (mNotifier != null)
+            mNotifier.dismiss();
     }
 }
