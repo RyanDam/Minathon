@@ -36,7 +36,7 @@ public class CircleTime extends View {
 
     public void setProcess(float process) {
         this.process = process;
-        int tt = (int)(duration * (1 - process));
+        int tt = (int)(duration * process);
         int hour = tt / (60*60);
         int minute = (tt - hour*60*60) / 60;
         int second = tt - hour*60*60 - minute*60;
@@ -66,7 +66,7 @@ public class CircleTime extends View {
 
     public void startClock(int duration, final CircleTimeListener ls) {
         this.duration = duration;
-        ValueAnimator vl = ValueAnimator.ofFloat(0f, 1f);
+        ValueAnimator vl = ValueAnimator.ofFloat(1f, 0f);
         vl.setDuration(duration*1000);
         vl.setInterpolator(new LinearInterpolator());
         ls.onClockStart();
