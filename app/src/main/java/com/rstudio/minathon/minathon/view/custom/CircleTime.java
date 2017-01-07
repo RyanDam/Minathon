@@ -77,6 +77,7 @@ public class CircleTime extends View {
                 setProcess(p);
                 ls.onClockUpdate(p);
                 if ((int)p == 1) setProcess(p);
+                if (p==0) ls.onClockEnd();
             }
         });
         vl.start();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#14000000</color>
-    <color name="colorPrimaryDark">#1e000000</color>
+    <!--<color name="colorPrimary">#14000000</color>-->
+    <!--<color name="colorPrimaryDark">#1e000000</color>-->
     <color name="colorAccent">#FF4081</color>
 
     <color name="blackColor">#000000</color>
@@ -11,4 +11,7 @@
     <color name="toolbarFading">#14000000</color>
     <color name="backgroundSetTime">#00000000</color>
     <color name="whiteColorHint">#aaffffff</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+
 </resources>
