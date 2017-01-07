@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_option_mode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rstudio.minathon.minathon.view.OptionModeActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -31,6 +29,51 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcvTopRecord"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layoutHeader"></android.support.v7.widget.RecyclerView>
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fabMenu"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            fab:menu_labels_style="@style/MenuLabelsStyle"
+            fab:menu_labels_showAnimation="@anim/jump_from_down"
+            fab:menu_labels_hideAnimation="@anim/jump_to_down"
+            fab:menu_animationDelayPerItem="0"
+            fab:menu_shadowColor="#40444444"
+            fab:menu_colorNormal="#FFB805"
+            fab:menu_colorPressed="#F2AB00"
+            fab:menu_colorRipple="#D99200">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab12"
+                style="@style/MenuButtonsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                fab:fab_label="Menu item 1" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab22"
+                style="@style/MenuButtonsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                fab:fab_label="Menu item 2" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab32"
+                style="@style/MenuButtonsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                fab:fab_label="hello" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+    </RelativeLayout>
+
 </RelativeLayout>
