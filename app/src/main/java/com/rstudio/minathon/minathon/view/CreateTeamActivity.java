@@ -2,39 +2,36 @@ package com.rstudio.minathon.minathon.view;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.firebase.FireBase;
+import com.rstudio.minathon.minathon.firebase.Group;
+import com.rstudio.minathon.minathon.firebase.OnConnectGroupListener;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.rstudio.minathon.minathon.view.presenter.CreateTeamPresenter.formatTime;
-
 public class CreateTeamActivity extends AppCompatActivity {
     @BindView(R.id.edtUserNameTeamLead)
     EditText edtUserName;
-    @BindView(R.id.rabtnPeanutDrift)
-    RadioButton rabtnPeanutDrift;
-    @BindView(R.id.rabtnElectricBlue)
-    RadioButton rabtnElectricBlue;
-    @BindView(R.id.rabtnFart)
-    RadioButton rabtnFart;
-    @BindView(R.id.rabtnHarlemShake)
-    RadioButton rabtnHarlemShake;
-    @BindView(R.id.rabtnPPAP)
-    RadioButton rabtnPPAP;
-    @BindView(R.id.rabtnSuperSaiyan)
-    RadioButton rabtnSuperSaiyan;
+    @BindView(R.id.radioRing)
+    RadioGroup radioGroup;
     @BindView(R.id.btnCreateam)
     Button btnCreateam;
     @BindView(R.id.btnSetTime)
@@ -48,12 +45,24 @@ public class CreateTeamActivity extends AppCompatActivity {
     @BindView(R.id.ckbNude)
     CheckBox ckbNude;
 
+    private int mHours = 0;
+    private int mMinutes = 10;
+
+    private List<CheckBox> lstCheckBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_team);
         ButterKnife.bind(this);
         getClickButton();
+        btnSetTime.setText(mHours + ":" + mMinutes);
+
+        lstCheckBox = new ArrayList<>();
+        lstCheckBox.add(ckbCrazyDance);
+        lstCheckBox.add(ckbDinner);
+        lstCheckBox.add(ckbMoney);
+        lstCheckBox.add(ckbNude);
     }
 
     private void getClickButton(){
@@ -66,25 +75,58 @@ public class CreateTeamActivity extends AppCompatActivity {
                 mTimePicker.show();
             }
         });
+
+        btnCreateam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Hihi", Toast.LENGTH_SHORT).show();
+
+                createTeam();
+            }
+        });
     }
 
-    private Calendar calendarResult = Calendar.getInstance();
+
     public Dialog onCreateDialogTimePicker() {
-        final Calendar dateTime = Calendar.getInstance();
         return new TimePickerDialog(this,new TimePickerDialog.OnTimeSetListener() {
 
             @Override
-            public void onTimeSet(TimePicker view, int hourOfDay,
-                                  int minute) {
-                dateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                dateTime.set(Calendar.MINUTE, minute);
-                btnSetTime.setText(formatTime
-                        .format(dateTime.getTime()));
-                calendarResult.set(Calendar.HOUR_OF_DAY, dateTime.get(Calendar.HOUR_OF_DAY));
-                calendarResult.set(Calendar.MINUTE, dateTime.get(Calendar.MINUTE));
-
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                mHours = hourOfDay;
+                mMinutes = minute;
+                btnSetTime.setText(mHours + ":" + mMinutes);
             }
-        }, dateTime.get(Calendar.HOUR_OF_DAY),
-                dateTime.get(Calendar.MINUTE), true);
+        }, mHours, mMinutes, true);
+    }
+
+    private void createTeam() {
+
+        Group group = new Group();
+
+        group.id = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
+        group.startTime = Calendar.getInstance().getTimeInMillis();
+        group.duration = mHours * 60 + mMinutes;
+        group.penaltyName = "";
+
+        for (CheckBox x: lstCheckBox) {
+            if (x.isChecked()) {
+                group.penaltyName += x.getText();
+                group.penaltyName += "|";
+            }
+        }
+
+        FireBase.createGroup(group, new OnConnectGroupListener() {
+            @Override
+            public void onSuccessful(Group g) {
+                Intent i = new Intent(getApplication(), CountdownActivity.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Toast.makeText(getApplicationContext(), "An error has occured!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
