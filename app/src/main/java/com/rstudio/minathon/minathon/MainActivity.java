@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Intent i = new Intent(this, AppService.class);
-        i.putExtra("duration", 60000);
+        i.putExtra("duration", (long) 60000);
+        i.putExtra("tone", R.raw.ringtone);
         startService(i);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        appState = 0;
+        appState = AppService.STATE_LOCKED;
 
         mNotifier = new Notifier(this);
         mNotifier.build("Hello", "Holle");
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        appState = 1;
+        appState = AppService.STATE_UNLOCKED;
 
         if (mNotifier != null)
             mNotifier.dismiss();
