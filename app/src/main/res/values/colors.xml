@@ -9,4 +9,6 @@
     <color name="background">#6995DD</color>
     <color name="countdownBack">#ef8696</color>
     <color name="toolbarFading">#14000000</color>
+    <color name="backgroundSetTime">#00000000</color>
+    <color name="whiteColorHint">#aaffffff</color>
 </resources>

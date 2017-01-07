@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="team_id">Team Id</string>
-    <string name="user_name">User name</string>
+    <string name="user_name">Your name</string>
     <string name="ringtone">Ringtone</string>
     <string name="penalty">Penalty</string>
     <string name="team_create">Create Team</string>
-    <string name="set_time">How Long</string>
+    <string name="set_time">Duration</string>
     <string name="join">Join</string>
 
     <!--ringtone-->
