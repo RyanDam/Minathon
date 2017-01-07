@@ -104,6 +104,8 @@ public class CircleTime extends View {
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTypeface(Typeface.DEFAULT_BOLD);
         textPaint.setTextSize(200);
+
+        setBackgroundColor(background);
     }
 
     @Override
@@ -112,7 +114,7 @@ public class CircleTime extends View {
         int h = canvas.getHeight();
         int w = canvas.getWidth();
         int r = (int)(((h > w ? w:h) / 2)*0.8);
-        canvas.drawRect(0,0, w, h, backP);
+//        canvas.drawRect(0,0, w, h, backP);
         canvas.drawCircle(w/2, h/2, r, circleP);
         float currentAngle = 360f*process;
         RectF f = new RectF((w - r*2)/2, (h - r*2)/2, (w - r*2)/2 + r*2, (h - r*2)/2 + r*2);
