@@ -41,11 +41,21 @@
                     android:id="@+id/edtUserName"/>
             </LinearLayout>
         </LinearLayout>
+
         <Button
             android:layout_alignParentBottom="true"
             android:id="@+id/btnJoinTeam"
             android:layout_width="match_parent"
+            android:text="@string/join"
             android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnCreateTeam"
+            android:layout_width="match_parent"
+            android:text="@string/team_create"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnJoinTeam"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -147,7 +147,7 @@
         <Button
             android:layout_alignParentBottom="true"
             android:id="@+id/btnCreateam"
-            android:text="@string/create_team"
+            android:text="@string/team_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>
