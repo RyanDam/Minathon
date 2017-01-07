@@ -11,26 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/layoutHeader"
+        <ImageView
+            android:id="@+id/imv_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btnSingleMode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/btnTeamMode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_height="250dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rcvTopRecord"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/layoutHeader"></android.support.v7.widget.RecyclerView>
+            android:layout_below="@+id/imv_header"></android.support.v7.widget.RecyclerView>
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/fabMenu"
@@ -50,28 +40,20 @@
             fab:menu_colorRipple="#D99200">
 
             <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/fab12"
+                android:id="@+id/btnSingleMode"
                 style="@style/MenuButtonsStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_edit"
-                fab:fab_label="Menu item 1" />
+                fab:fab_label="Single" />
 
             <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/fab22"
+                android:id="@+id/btnTeamMode"
                 style="@style/MenuButtonsStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_edit"
-                fab:fab_label="Menu item 2" />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/fab32"
-                style="@style/MenuButtonsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_edit"
-                fab:fab_label="hello" />
+                fab:fab_label="Team" />
 
         </com.github.clans.fab.FloatingActionMenu>
     </RelativeLayout>
