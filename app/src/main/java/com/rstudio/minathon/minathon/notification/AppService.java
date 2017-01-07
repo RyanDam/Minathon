@@ -13,21 +13,26 @@ import com.rstudio.minathon.minathon.R;
 
 public class AppService extends IntentService {
 
+    public static final int STATE_LOCKED = 0;
+    public static final int STATE_UNLOCKED = 1;
+
     private MediaPlayer mPlayer;
 
     public AppService() {
         super("AppService");
-        mPlayer = MediaPlayer.create(MainActivity.appInstance, R.raw.ringtone);
-        mPlayer.setLooping(true);
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        int toneId = intent.getIntExtra("tone", R.raw.ringtone);
+        mPlayer = MediaPlayer.create(MainActivity.appInstance, toneId);
+        mPlayer.setLooping(true);
+
         // loop until time is up
         long startTime = System.currentTimeMillis();
         long duration = intent.getLongExtra("duration", 0); // time in miniseconds
         while ((System.currentTimeMillis() - startTime) < duration) {
-            if (MainActivity.appState == 0) {
+            if (MainActivity.appState == STATE_LOCKED) {
                 // app is not opening now
                 // alert sound
                 if (!mPlayer.isPlaying()) {
