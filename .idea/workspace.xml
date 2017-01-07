@@ -51,16 +51,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OptionModeActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/OptionModeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,8 +66,8 @@
       <file leaf-file-name="activity_join_team.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_join_team.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            <state relative-caret-position="320">
+              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
               <folding>
                 <element signature="e#1032#1049#0" expanded="true" />
                 <element signature="e#1622#1641#0" expanded="true" />
@@ -92,39 +82,10 @@
       <file leaf-file-name="team_strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/team_strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_create_team.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_create_team.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-              <folding>
-                <element signature="e#886#905#0" expanded="true" />
-                <element signature="e#1296#1313#0" expanded="true" />
-                <element signature="e#1474#1499#0" expanded="true" />
-                <element signature="e#1596#1611#0" expanded="true" />
-                <element signature="e#1815#1831#0" expanded="true" />
-                <element signature="e#2036#2057#0" expanded="true" />
-                <element signature="e#2262#2276#0" expanded="true" />
-                <element signature="e#2645#2663#0" expanded="true" />
-                <element signature="e#2725#2750#0" expanded="true" />
-                <element signature="e#2945#2967#0" expanded="true" />
-                <element signature="e#3182#3196#0" expanded="true" />
-                <element signature="e#3404#3418#0" expanded="true" />
-                <element signature="e#3626#3648#0" expanded="true" />
-                <element signature="e#3863#3886#0" expanded="true" />
-                <element signature="e#4102#4124#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -160,14 +121,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateTeamActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateTeamActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CreateTeamActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="524">
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_create_team.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_create_team.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+              <folding>
+                <element signature="e#933#952#0" expanded="true" />
+                <element signature="e#1634#1651#0" expanded="true" />
+                <element signature="e#1828#1853#0" expanded="true" />
+                <element signature="e#1962#1977#0" expanded="true" />
+                <element signature="e#2201#2217#0" expanded="true" />
+                <element signature="e#2442#2463#0" expanded="true" />
+                <element signature="e#2692#2706#0" expanded="true" />
+                <element signature="e#3394#3412#0" expanded="true" />
+                <element signature="e#3482#3507#0" expanded="true" />
+                <element signature="e#3722#3744#0" expanded="true" />
+                <element signature="e#3979#3993#0" expanded="true" />
+                <element signature="e#4221#4235#0" expanded="true" />
+                <element signature="e#4463#4485#0" expanded="true" />
+                <element signature="e#4720#4743#0" expanded="true" />
+                <element signature="e#4979#5001#0" expanded="true" />
+                <element signature="e#5537#5555#0" expanded="true" />
+                <element signature="e#6050#6071#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2022,7 +2024,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/OptionModeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CountDownActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CountdownActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CreateTeamActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_option_mode.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
@@ -2031,6 +2032,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/JoinTeamActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/team_strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_create_team.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CreateTeamActivity.java" />
       </list>
     </option>
   </component>
@@ -2631,7 +2633,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28971255" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28971255" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2702,42 +2704,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/OptionModeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_option_mode.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CreateTeamActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2747,20 +2718,6 @@
           <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_join_team.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="e#1032#1049#0" expanded="true" />
-            <element signature="e#1622#1641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/JoinTeamActivity.java">
@@ -2781,39 +2738,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_option_mode.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_join_team.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#1032#1049#0" expanded="true" />
+            <element signature="e#1622#1641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/OptionModeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/team_strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_create_team.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        <state relative-caret-position="439">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
           <folding>
-            <element signature="e#886#905#0" expanded="true" />
-            <element signature="e#1296#1313#0" expanded="true" />
-            <element signature="e#1474#1499#0" expanded="true" />
-            <element signature="e#1596#1611#0" expanded="true" />
-            <element signature="e#1815#1831#0" expanded="true" />
-            <element signature="e#2036#2057#0" expanded="true" />
-            <element signature="e#2262#2276#0" expanded="true" />
-            <element signature="e#2645#2663#0" expanded="true" />
-            <element signature="e#2725#2750#0" expanded="true" />
-            <element signature="e#2945#2967#0" expanded="true" />
-            <element signature="e#3182#3196#0" expanded="true" />
-            <element signature="e#3404#3418#0" expanded="true" />
-            <element signature="e#3626#3648#0" expanded="true" />
-            <element signature="e#3863#3886#0" expanded="true" />
-            <element signature="e#4102#4124#0" expanded="true" />
+            <element signature="e#933#952#0" expanded="true" />
+            <element signature="e#1634#1651#0" expanded="true" />
+            <element signature="e#1828#1853#0" expanded="true" />
+            <element signature="e#1962#1977#0" expanded="true" />
+            <element signature="e#2201#2217#0" expanded="true" />
+            <element signature="e#2442#2463#0" expanded="true" />
+            <element signature="e#2692#2706#0" expanded="true" />
+            <element signature="e#3394#3412#0" expanded="true" />
+            <element signature="e#3482#3507#0" expanded="true" />
+            <element signature="e#3722#3744#0" expanded="true" />
+            <element signature="e#3979#3993#0" expanded="true" />
+            <element signature="e#4221#4235#0" expanded="true" />
+            <element signature="e#4463#4485#0" expanded="true" />
+            <element signature="e#4720#4743#0" expanded="true" />
+            <element signature="e#4979#5001#0" expanded="true" />
+            <element signature="e#5537#5555#0" expanded="true" />
+            <element signature="e#6050#6071#0" expanded="true" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rstudio/minathon/minathon/view/CreateTeamActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

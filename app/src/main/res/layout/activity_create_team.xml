@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.rstudio.minathon.minathon.view.CreateTeamActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/layoutUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -21,96 +22,133 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edtTeamId"/>
+                android:id="@+id/edtUserNameTeamLead"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackColor"
-            android:text="@string/penalty"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_below="@id/layoutUserName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_left_team"
-            android:orientation="vertical">
-
-            <CheckBox
-                android:text="@string/money"
+            android:orientation="vertical"
+            android:id="@+id/layoutPenalty">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/ckbMoney" />
+                android:textColor="@color/blackColor"
+                android:text="@string/penalty"/>
 
-            <CheckBox
-                android:text="@string/dinner"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/ckbMoney2" />
+                android:layout_marginLeft="@dimen/margin_left_team"
+                android:orientation="vertical">
 
-            <CheckBox
-                android:text="@string/crazy_dance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ckbMoney3" />
+                <CheckBox
+                    android:text="@string/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ckbMoney" />
 
-            <CheckBox
-                android:text="@string/nude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ckbMoney4" />
+                <CheckBox
+                    android:text="@string/dinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ckbDinner" />
 
+                <CheckBox
+                    android:text="@string/crazy_dance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ckbCrazyDance" />
+
+                <CheckBox
+                    android:text="@string/nude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ckbNude" />
+
+            </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blackColor"
-            android:text="@string/ringtone"/>
-
-        <RadioGroup
-            android:layout_marginLeft="@dimen/margin_left_team"
-            android:id="@+id/radioRing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <RadioButton
-                android:text="@string/peanut_drift"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_below="@id/layoutPenalty"
+            android:id="@+id/layoutRingtone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rabtnPeanutDrift" />
+                android:textColor="@color/blackColor"
+                android:text="@string/ringtone"/>
 
-            <RadioButton
-                android:text="@string/ppap"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:layout_marginLeft="@dimen/margin_left_team"
+                android:id="@+id/radioRing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:text="@string/peanut_drift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnPeanutDrift" />
+
+                <RadioButton
+                    android:text="@string/ppap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnPPAP" />
+
+                <RadioButton
+                    android:text="@string/fart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnFart" />
+
+                <RadioButton
+                    android:text="@string/super_saiyan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnSuperSaiyan" />
+
+                <RadioButton
+                    android:text="@string/electric_blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnElectricBlue" />
+
+                <RadioButton
+                    android:text="@string/harlem_shake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rabtnHarlemShake" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSetTime"
+            android:layout_below="@id/layoutRingtone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/set_time"
+                android:textColor="@color/blackColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rabtnPPAP" />
+                android:id="@+id/btnSetTime"/>
+        </LinearLayout>
 
-            <RadioButton
-                android:text="@string/fart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rabtnFart" />
-
-            <RadioButton
-                android:text="@string/super_saiyan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rabtnSuperSaiyan" />
-
-            <RadioButton
-                android:text="@string/electric_blue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rabtnElectricBlue" />
-
-            <RadioButton
-                android:text="@string/harlem_shake"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rabtnHarlemShake" />
-
-        </RadioGroup>
-
-    </LinearLayout>
+        <Button
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btnCreateam"
+            android:text="@string/create_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 </RelativeLayout>
