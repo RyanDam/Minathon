@@ -23,20 +23,27 @@ public class AppService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        while (true) {
-            try {
-                if (MainActivity.appState == 0) {
-                    // app is not opening now
-                    if (!mPlayer.isPlaying()) {
-                        mPlayer.start();
-                    }
-                } else {
-                    if (mPlayer.isPlaying()) {
-                        mPlayer.pause();
-                    }
+        // loop until time is up
+        long startTime = System.currentTimeMillis();
+        long duration = intent.getLongExtra("duration", 0); // time in miniseconds
+        while ((System.currentTimeMillis() - startTime) < duration) {
+            if (MainActivity.appState == 0) {
+                // app is not opening now
+                // alert sound
+                if (!mPlayer.isPlaying()) {
+                    mPlayer.start();
                 }
 
-                Thread.sleep(1000);
+                // send alert to other team members
+
+            } else {
+                if (mPlayer.isPlaying()) {
+                    mPlayer.pause();
+                }
+            }
+
+            try {
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

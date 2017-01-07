@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.rstudio.minathon.minathon.notification.AppService;
+import com.rstudio.minathon.minathon.notification.Notifier;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,7 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Intent i = new Intent(this, AppService.class);
+        i.putExtra("duration", 60000);
         startService(i);
+//        Notifier notifier = new Notifier(this);
+//        notifier.build("Hello", "Holle");
     }
 
     @Override
