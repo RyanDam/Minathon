@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="team_id">Team Id</string>
+    <string name="user_name">User name</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="penalty">Penalty</string>
+
+    <!--ringtone-->
+    <string name="ppap">Pen Pineapple Apple Pen</string>
+    <string name="fart">Fart</string>
+    <string name="super_saiyan">Super saiyan</string>
+    <string name="electric_blue">Electric blue</string>
+    <string name="peanut_drift">Đậu phộng trôi</string>
+    <string name="harlem_shake">Harlem shake</string>
+
+    <!--penalty-->
+    <string name="money">10$</string>
+    <string name="dinner">dinner</string>
+    <string name="crazy_dance">crazy dance</string>
+    <string name="nude">nude</string>
+</resources>
