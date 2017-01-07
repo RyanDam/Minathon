@@ -27,7 +27,7 @@
             android:layout_marginTop="@dimen/magin_16"
             android:layout_marginBottom="@dimen/magin_8"
             android:text="TOP RECORDS"
-            android:textSize="18dp"
+            android:textSize="14dp"
             android:layout_marginLeft="@dimen/magin_16"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -37,9 +37,9 @@
             android:id="@+id/rcvTopRecord"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/magin_16"
-            android:layout_marginRight="@dimen/magin_16"
-            android:layout_below="@+id/tv_toprecord"></android.support.v7.widget.RecyclerView>
+            android:layout_below="@+id/tv_toprecord">
+
+        </android.support.v7.widget.RecyclerView>
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/fabMenu"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_group"
-                fab:fab_label="Group" />
+                fab:fab_label="Create group" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/btnJoinTeam"
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_join"
-                fab:fab_label="Join" />
+                fab:fab_label="Join a grou[" />
         </com.github.clans.fab.FloatingActionMenu>
     </RelativeLayout>
 
