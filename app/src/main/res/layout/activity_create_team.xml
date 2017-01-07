@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        app:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
 
         <RelativeLayout
             android:id="@+id/activity_create_team"
@@ -17,8 +24,7 @@
             android:layout_height="wrap_content"
             android:background="@color/background"
             android:orientation="vertical"
-            android:padding="16dp"
-            tools:context="com.rstudio.minathon.minathon.view.CreateTeamActivity">
+            android:padding="16dp">
 
             <LinearLayout
                 android:id="@+id/layoutUserName"
@@ -66,13 +72,6 @@
                     android:textColor="@color/whiteColor"
                     android:textColorHighlight="@color/whiteColor" />
 
-                <Button
-                    android:id="@+id/btnSetTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_duration"
-                    android:background="@color/backgroundSetTime"
-                    android:textColor="@color/whiteColor" />
             </RelativeLayout>
 
             <LinearLayout
@@ -214,7 +213,6 @@
                 </RadioGroup>
             </LinearLayout>
         </RelativeLayout>
-
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
@@ -224,5 +222,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/ic_arrow_forward_white_24dp" />
 </RelativeLayout>

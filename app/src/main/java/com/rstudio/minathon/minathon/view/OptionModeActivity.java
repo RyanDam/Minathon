@@ -1,14 +1,19 @@
 package com.rstudio.minathon.minathon.view;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -31,6 +36,8 @@ public class OptionModeActivity extends AppCompatActivity {
     FloatingActionButton btnSingleMode;
     @BindView(R.id.btnTeamMode)
     FloatingActionButton btnTeamMode;
+    @BindView(R.id.btnJoinTeam)
+    FloatingActionButton btnJoinTeam;
     @BindView(R.id.fabMenu)
     FloatingActionMenu fabMenu;
     @BindView(R.id.imvHeader)
@@ -39,11 +46,13 @@ public class OptionModeActivity extends AppCompatActivity {
     RecyclerView rcvTopRecord;
 
     private List<FloatingActionMenu> menus = new ArrayList<>();
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_mode);
+        mContext = this;
         ButterKnife.bind(this);
         setClickButton();
 //        controlFAB();
@@ -61,13 +70,13 @@ public class OptionModeActivity extends AppCompatActivity {
 
     private void setRecyclerView(){
         List<TopRecord> topRecordList = new ArrayList<>();
-        topRecordList.add(new TopRecord("Focus for 86m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 66m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 54m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 53m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 52m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 51m","1/1/2017"));
-        topRecordList.add(new TopRecord("Focus for 30m","1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 86m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 66m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 54m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 53m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 52m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 51m", "1/1/2017"));
+        topRecordList.add(new TopRecord("Focus for 30m", "1/1/2017"));
 
         TopRecordAdapter mAdapter = new TopRecordAdapter(topRecordList, this);
         rcvTopRecord.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
@@ -77,11 +86,11 @@ public class OptionModeActivity extends AppCompatActivity {
         rcvTopRecord.setAdapter(mAdapter);
     }
 
-    private void setClickButton(){
+    private void setClickButton() {
         btnSingleMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showActivity(CreateSingleActivity.class);
             }
         });
 
@@ -91,6 +100,13 @@ public class OptionModeActivity extends AppCompatActivity {
                 showActivity(JoinTeamActivity.class);
             }
         });
+
+        btnJoinTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                configDialog();
+            }
+        });
     }
 
     private void showActivity(Class activity) {
@@ -98,7 +114,7 @@ public class OptionModeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void controlFAB(){
+    private void controlFAB() {
         ContextThemeWrapper context = new ContextThemeWrapper(this, R.style.MenuButtonsStyle);
         FloatingActionButton programFab2 = new FloatingActionButton(context);
         programFab2.setLabelText("Programmatically added button");
@@ -119,5 +135,29 @@ public class OptionModeActivity extends AppCompatActivity {
                 Toast.makeText(OptionModeActivity.this, text, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void configDialog() {
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(mContext, R.style.AlertDialogStyle);
+        builder.setTitle("Join a group");
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.dialog_join_team, null);
+        final EditText edtName = (EditText) dialogView.findViewById(R.id.edtDialogName);
+        final EditText edtGroupId = (EditText) dialogView.findViewById(R.id.edtDialogGroupId);
+        builder.setView(dialogView);
+
+        builder.setPositiveButton("Join", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // TODO
+                Toast.makeText(getApplication(), edtName.getText().toString() + " | " +
+                        edtGroupId.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
+
+
+        builder.show();
     }
 }
