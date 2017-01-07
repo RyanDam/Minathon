@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_476e40b6c590598d61219dcaf6e8fd090b6ad222.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_544a41cde5b691337c18d78f016df968e824e361.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_8c078c3568112f9ba4149f5020bc1838b60d9e16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_7ec12fa9202268d84671e8265418404c6a79c962.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_6c90004db3dfb8c28185fd4247de89fb181e5f5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.1_da37fc2f6f39c44289e387f4d3965f7fe71aeca1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_3621c7f6294c2ffb11cd504bdf2917d72ea61f0b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_d2652b81f408cf1ae6594e7d4fc6c894378b1cd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_6001a314621155d9f581e111c465d514361fb986.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.1_65ac4983b53f54232b0e0892e15191d4274ef9c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_db88eca85d2df74a40596963119c07b1026be28e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_39376d65f7a87a79e31bcc9b6d7505d9b3e5e5f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_3ad4c5b56b027de187f4fa95e0f08e8378b4a578.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_a3e3c6fb6952650ed8c593be0d1ca99f5751f04d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\workspace\Minathon\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="F:\workspace\Minathon\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_e56091cb91542b9ac284e8608c936f8115cd7589.jar" />
+    </item>
+
+</items>
