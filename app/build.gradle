@@ -32,6 +32,12 @@ dependencies {
     compile 'com.google.firebase:firebase-database:10.0.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+<<<<<<< HEAD
+=======
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.firebase:firebase-core:10.0.0'
+    compile 'com.google.firebase:firebase-database:10.0.0'
+>>>>>>> cfd9e7a694756e01f2260611ff46b7002386b653
 }
 
 apply plugin: 'com.google.gms.google-services'
