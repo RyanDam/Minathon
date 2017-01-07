@@ -66,7 +66,7 @@ public class CircleTime extends View {
 
     public void startClock(int duration, final CircleTimeListener ls) {
         this.duration = duration;
-        ValueAnimator vl = ValueAnimator.ofFloat(0f, 1f);
+        ValueAnimator vl = ValueAnimator.ofFloat(1f, 0f);
         vl.setDuration(duration*1000);
         vl.setInterpolator(new LinearInterpolator());
         ls.onClockStart();
@@ -103,9 +103,9 @@ public class CircleTime extends View {
         textPaint.setARGB(255, 255, 255, 255);
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTypeface(Typeface.DEFAULT_BOLD);
-        textPaint.setTextSize(200);
+        textPaint.setTextSize(180);
 
-        setBackgroundColor(background);
+//        setBackgroundColor(background);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class CircleTime extends View {
         super.onDraw(canvas);
         int h = canvas.getHeight();
         int w = canvas.getWidth();
-        int r = (int)(((h > w ? w:h) / 2)*0.8);
+        int r = (int)(((h > w ? w:h) / 2)*0.9);
 //        canvas.drawRect(0,0, w, h, backP);
         canvas.drawCircle(w/2, h/2, r, circleP);
         float currentAngle = 360f*process;

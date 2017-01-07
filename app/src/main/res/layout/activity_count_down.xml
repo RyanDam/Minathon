@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_count_down"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rstudio.minathon.minathon.view.CountdownActivity">
+    android:paddingTop="25dp"
+    tools:context="com.rstudio.minathon.minathon.view.CountdownActivity"
+    android:background="@color/countdownBack"
+    android:fitsSystemWindows="false">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ToolBarStyle"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <com.rstudio.minathon.minathon.view.custom.CircleTime
         android:id="@+id/cct"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/imvHeader"
+        android:background="@color/countdownBack" />
 
+    <ImageView
+        android:id="@+id/imvHeader"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_alignParentBottom="true" />
 
+    <TextView
+        android:text="Forcus on your work. Do NOT exit Forbidden!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cct"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp"
+        android:id="@+id/textView"
+        android:textColor="#fff"
+        android:textStyle="normal|bold" />
 
 
 </RelativeLayout>

@@ -54,6 +54,11 @@ public class OptionModeActivity extends AppCompatActivity {
         setRecyclerView();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     private void setRecyclerView(){
         List<TopRecord> topRecordList = new ArrayList<>();
         topRecordList.add(new TopRecord("Focus for 86m","1/1/2017"));
