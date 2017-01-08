@@ -79,8 +79,6 @@ public class CreateSingleActivity extends AppCompatActivity {
         fabCreateTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Hihi", Toast.LENGTH_SHORT).show();
-
                 createTeam();
             }
         });
