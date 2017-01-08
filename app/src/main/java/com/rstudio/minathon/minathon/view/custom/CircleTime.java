@@ -84,9 +84,15 @@ public class CircleTime extends View {
         vl.start();
     }
 
-    public void stopClock() {
+    public void pauseClock() {
         if (vl != null && vl.isRunning()) {
-            vl.end();
+            vl.pause();
+        }
+    }
+
+    public void resumeClock() {
+        if (vl != null && vl.isPaused()) {
+            vl.resume();
         }
     }
 

@@ -8,15 +8,14 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#14000000"
         android:elevation="0dp"
-        app:theme="@style/AppTheme"
-        app:popupTheme="@style/AppTheme" />
+        android:theme="@style/ToolBarStyle"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/activity_create_team"
@@ -163,7 +162,7 @@
                         android:layout_marginBottom="5dp"
                         android:buttonTint="@color/whiteColor"
                         android:text="@string/peanut_drift"
-                        android:textColor="@color/whiteColor" />
+                        android:textColor="@color/whiteColor"/>
 
                     <RadioButton
                         android:id="@+id/rabtnPPAP"

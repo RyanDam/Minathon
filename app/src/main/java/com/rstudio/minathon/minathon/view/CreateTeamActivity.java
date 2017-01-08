@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,6 +17,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.Utils;
 import com.rstudio.minathon.minathon.firebase.FireBase;
 import com.rstudio.minathon.minathon.firebase.Group;
 import com.rstudio.minathon.minathon.firebase.OnConnectGroupListener;
@@ -52,6 +54,8 @@ public class CreateTeamActivity extends AppCompatActivity {
 
     private List<CheckBox> lstCheckBox;
 
+    int checkedTone = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +63,6 @@ public class CreateTeamActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
@@ -71,6 +74,33 @@ public class CreateTeamActivity extends AppCompatActivity {
         lstCheckBox.add(ckbDinner);
         lstCheckBox.add(ckbMoney);
         lstCheckBox.add(ckbNude);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.rabtnPeanutDrift:
+                        checkedTone = 0;
+                        break;
+                    case R.id.rabtnPPAP:
+                        checkedTone = 1;
+                        break;
+                    case R.id.rabtnFart:
+                        checkedTone = 2;
+                        break;
+                    case R.id.rabtnSuperSaiyan:
+                        checkedTone = 3;
+                        break;
+                    case R.id.rabtnElectricBlue:
+                        checkedTone = 4;
+                        break;
+                    case R.id.rabtnHarlemShake:
+                        checkedTone = 5;
+                        break;
+                }
+            }
+        });
+
     }
 
     private void getClickButton() {
@@ -87,13 +117,10 @@ public class CreateTeamActivity extends AppCompatActivity {
         fabCreateTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Hihi", Toast.LENGTH_SHORT).show();
-
                 createTeam();
             }
         });
     }
-
 
     public Dialog onCreateDialogTimePicker() {
         return new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -109,29 +136,35 @@ public class CreateTeamActivity extends AppCompatActivity {
 
     private void createTeam() {
 
-        Group group = new Group();
+        final Group group = new Group();
 
         group.id = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
         group.startTime = Calendar.getInstance().getTimeInMillis();
-        group.duration = mHours * 60 + mMinutes;
+        group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
 
         for (CheckBox x : lstCheckBox) {
             if (x.isChecked()) {
                 group.penaltyName += x.getText();
-                group.penaltyName += "|";
+                group.penaltyName += ", ";
             }
         }
 
+        final Dialog dia = Utils.getWaitingDialog(this);
+        dia.show();
         FireBase.createGroup(group, new OnConnectGroupListener() {
             @Override
             public void onSuccessful(Group g) {
+                dia.dismiss();
                 Intent i = new Intent(getApplication(), CountdownActivity.class);
+                i.putExtra("BikeId", group.id);
+                i.putExtra("time", (int)group.duration);
+                i.putExtra("ringtone", checkedTone);
                 startActivity(i);
             }
-
             @Override
             public void onFailure(Exception e) {
+                dia.dismiss();
                 Toast.makeText(getApplicationContext(), "An error has occured!", Toast.LENGTH_SHORT).show();
             }
         });
