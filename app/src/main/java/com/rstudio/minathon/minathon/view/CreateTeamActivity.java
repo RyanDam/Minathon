@@ -120,7 +120,6 @@ public class CreateTeamActivity extends AppCompatActivity {
                 mTimePicker.show();
             }
         });
-
         fabCreateTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,8 +149,8 @@ public class CreateTeamActivity extends AppCompatActivity {
         group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
         group.tone = checkedTone;
-
-
+        Calendar cl = Calendar.getInstance();
+        group.startTime = cl.getTimeInMillis();
 
         for (CheckBox x : lstCheckBox) {
             if (x.isChecked()) {
@@ -173,6 +172,7 @@ public class CreateTeamActivity extends AppCompatActivity {
                 i.putExtra("ringtone", checkedTone);
                 startActivity(i);
             }
+
             @Override
             public void onFailure(Exception e) {
                 dia.dismiss();

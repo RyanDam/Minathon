@@ -136,6 +136,9 @@ public class CreateSingleActivity extends AppCompatActivity {
         group.penaltyName = "";
         group.tone = checkedTone;
 
+        Calendar cl = Calendar.getInstance();
+        group.startTime = cl.getTimeInMillis();
+
         Intent i = new Intent(getApplication(), CountdownActivity.class);
         i.putExtra("BikeId", group.id);
         i.putExtra("time", (int)group.duration);
