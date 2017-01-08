@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -80,22 +78,22 @@ public class CreateTeamActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rabtnPeanutDrift:
-                        checkedTone = 0;
+                        checkedTone = 3;
                         break;
                     case R.id.rabtnPPAP:
                         checkedTone = 1;
                         break;
                     case R.id.rabtnFart:
-                        checkedTone = 2;
-                        break;
-                    case R.id.rabtnSuperSaiyan:
-                        checkedTone = 3;
-                        break;
-                    case R.id.rabtnElectricBlue:
                         checkedTone = 4;
                         break;
-                    case R.id.rabtnHarlemShake:
+                    case R.id.rabtnSuperSaiyan:
                         checkedTone = 5;
+                        break;
+                    case R.id.rabtnElectricBlue:
+                        checkedTone = 0;
+                        break;
+                    case R.id.rabtnHarlemShake:
+                        checkedTone = 2;
                         break;
                 }
             }

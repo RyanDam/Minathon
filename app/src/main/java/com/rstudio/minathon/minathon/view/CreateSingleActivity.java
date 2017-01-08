@@ -8,13 +8,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.Utils;
 import com.rstudio.minathon.minathon.firebase.FireBase;
 import com.rstudio.minathon.minathon.firebase.Group;
 import com.rstudio.minathon.minathon.firebase.OnConnectGroupListener;
@@ -31,16 +31,9 @@ public class CreateSingleActivity extends AppCompatActivity {
     EditText edtDuration;
     @BindView(R.id.radioRing)
     RadioGroup radioGroup;
-    @BindView(R.id.ckbCrazyDance)
-    CheckBox ckbCrazyDance;
-    @BindView(R.id.ckbDinner)
-    CheckBox ckbDinner;
-    @BindView(R.id.ckbMoney)
-    CheckBox ckbMoney;
-    @BindView(R.id.ckbNude)
-    CheckBox ckbNude;
     @BindView(R.id.fab_create_team)
     FloatingActionButton fabCreateTeam;
+    int checkedTone = -1;
 
     private int mHours = 0;
     private int mMinutes = 10;
@@ -53,12 +46,37 @@ public class CreateSingleActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ButterKnife.bind(this);
         getClickButton();
         edtDuration.setText(mHours + ":" + mMinutes);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.rabtnPeanutDrift:
+                        checkedTone = 3;
+                        break;
+                    case R.id.rabtnPPAP:
+                        checkedTone = 1;
+                        break;
+                    case R.id.rabtnFart:
+                        checkedTone = 4;
+                        break;
+                    case R.id.rabtnSuperSaiyan:
+                        checkedTone = 5;
+                        break;
+                    case R.id.rabtnElectricBlue:
+                        checkedTone = 0;
+                        break;
+                    case R.id.rabtnHarlemShake:
+                        checkedTone = 2;
+                        break;
+                }
+            }
+        });
 
     }
 
@@ -76,8 +94,6 @@ public class CreateSingleActivity extends AppCompatActivity {
         fabCreateTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Hihi", Toast.LENGTH_SHORT).show();
-
                 createTeam();
             }
         });
@@ -97,22 +113,28 @@ public class CreateSingleActivity extends AppCompatActivity {
 
     private void createTeam() {
 
-        Group group = new Group();
+        final Group group = new Group();
 
         group.id = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
         group.startTime = Calendar.getInstance().getTimeInMillis();
-        group.duration = mHours * 60 + mMinutes;
+        group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
 
+        final Dialog dia = Utils.getWaitingDialog(this);
+        dia.show();
         FireBase.createGroup(group, new OnConnectGroupListener() {
             @Override
             public void onSuccessful(Group g) {
+                dia.dismiss();
                 Intent i = new Intent(getApplication(), CountdownActivity.class);
+                i.putExtra("BikeId", group.id);
+                i.putExtra("time", (int)group.duration);
+                i.putExtra("ringtone", checkedTone);
                 startActivity(i);
             }
-
             @Override
             public void onFailure(Exception e) {
+                dia.dismiss();
                 Toast.makeText(getApplicationContext(), "An error has occured!", Toast.LENGTH_SHORT).show();
             }
         });
