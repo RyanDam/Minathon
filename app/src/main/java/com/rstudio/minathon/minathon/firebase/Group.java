@@ -11,4 +11,5 @@ public class Group {
     public boolean alarm = false;
     public String alarmName = "";
     public String penaltyName = "";
+    public int tone = 0;
 }

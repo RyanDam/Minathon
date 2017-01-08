@@ -23,6 +23,10 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.Utils;
+import com.rstudio.minathon.minathon.firebase.FireBase;
+import com.rstudio.minathon.minathon.firebase.Group;
+import com.rstudio.minathon.minathon.firebase.OnConnectGroupListener;
 import com.rstudio.minathon.minathon.view.presenter.TopRecord;
 import com.rstudio.minathon.minathon.view.presenter.TopRecordAdapter;
 
@@ -156,9 +160,22 @@ public class OptionModeActivity extends AppCompatActivity {
         builder.setPositiveButton("Join", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // TODO
-                Toast.makeText(getApplication(), edtName.getText().toString() + " | " +
-                        edtGroupId.getText().toString(), Toast.LENGTH_SHORT).show();
+                FireBase.connectGroup(edtGroupId.getText().toString(), new OnConnectGroupListener() {
+                    @Override
+                    public void onSuccessful(Group g) {
+                        Utils.NAME = edtName.getText().toString();
+                        Intent i = new Intent(getApplication(), CountdownActivity.class);
+                        i.putExtra("BikeId", g.id);
+                        i.putExtra("time", (int)g.duration);
+                        i.putExtra("ringtone", g.tone);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(getApplication(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
         builder.setNegativeButton("Cancel", null);

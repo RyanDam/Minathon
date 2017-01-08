@@ -27,7 +27,6 @@ public class Notifier {
                 .setContentText(content)
                 .setAutoCancel(false)
                 .setOngoing(true);
-
         mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(mId, mBuilder.build());
     }
