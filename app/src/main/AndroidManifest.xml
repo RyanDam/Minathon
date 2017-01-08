@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
+
         <service android:name=".notification.AppService" />
 
         <activity android:name=".view.CountdownActivity"/>
-        <activity
-            android:name=".view.OptionModeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+
+        <activity android:name=".view.OptionModeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +28,10 @@
         <service android:name=".notification.AppService" />
 
         <activity android:name=".view.JoinTeamActivity" />
-        <activity
-            android:name=".view.CreateTeamActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.CreateSingleActivity"></activity>
+
+        <activity android:name=".view.CreateTeamActivity" />
+
+        <activity android:name=".view.CreateSingleActivity" />
     </application>
 
 </manifest>

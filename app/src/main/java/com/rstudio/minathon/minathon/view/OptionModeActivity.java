@@ -11,6 +11,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -44,6 +45,8 @@ public class OptionModeActivity extends AppCompatActivity {
     ImageView imvHeader;
     @BindView(R.id.rcvTopRecord)
     RecyclerView rcvTopRecord;
+    @BindView(R.id.my_toolbar)
+    Toolbar toolbar;
 
     private List<FloatingActionMenu> menus = new ArrayList<>();
     private Context mContext;
@@ -54,6 +57,9 @@ public class OptionModeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_option_mode);
         mContext = this;
         ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+
         setClickButton();
 //        controlFAB();
         Glide.with(OptionModeActivity.this)

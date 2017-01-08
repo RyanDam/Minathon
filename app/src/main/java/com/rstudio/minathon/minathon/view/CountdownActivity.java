@@ -38,6 +38,8 @@ public class CountdownActivity extends AppCompatActivity {
     private List<Integer> listRingtone = new ArrayList<>();
     public static Context appInstance;
 
+    boolean needNoti = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +47,16 @@ public class CountdownActivity extends AppCompatActivity {
         appInstance = this;
         ButterKnife.bind(this);
 
+        setupToolbar();
+
         Glide.with(CountdownActivity.this)
                 .load(R.drawable.running)
                 .crossFade()
                 .into(new GlideDrawableImageViewTarget(imvHeader));
 
         getDataInit();
-        timeCountdown =15;
-        time.startClock(15, new CircleTimeListener() {
+
+        time.startClock(timeCountdown, new CircleTimeListener() {
             @Override
             public void onClockStart() {
                 Log.d("timerun","start");
@@ -63,6 +67,7 @@ public class CountdownActivity extends AppCompatActivity {
                 Log.d("timerun","end");
                 showActivity(OptionModeActivity.class);
                 CountdownActivity.this.finish();
+                needNoti = false;
             }
 
             @Override
@@ -72,7 +77,6 @@ public class CountdownActivity extends AppCompatActivity {
             }
         });
 
-        setupToolbar();
         turnOnNotification();
     }
 
@@ -89,10 +93,18 @@ public class CountdownActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        appState = AppService.STATE_LOCKED;
+        time.pauseClock();
+        if (needNoti) {
+            appState = AppService.STATE_LOCKED;
+            mNotifier = new Notifier(this);
+            mNotifier.build("Hello", "Holle");
+        }
+    }
 
-        mNotifier = new Notifier(this);
-        mNotifier.build("Hello", "Holle");
+    @Override
+    protected void onResume() {
+        super.onResume();
+        time.resumeClock();
     }
 
     @Override
@@ -100,16 +112,21 @@ public class CountdownActivity extends AppCompatActivity {
         Log.d("checkvaluehehe1",timeRun+"");
         super.onPostResume();
         appState = AppService.STATE_UNLOCKED;
+        if (needNoti) {
+            if (mNotifier != null)
+                mNotifier.dismiss();
+        }
+    }
 
-        if (mNotifier != null)
-            mNotifier.dismiss();
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
     }
 
     private void getDataInit(){
         Groupid = getIntent().getStringExtra("BikeId");
-        timeCountdown = getIntent().getIntExtra("time",0);
+        timeCountdown = getIntent().getIntExtra("time",15);
         ringtone = getIntent().getIntExtra("ringtone",-1);
-
         listRingtone.add(R.raw.dien_may_xanh);
         listRingtone.add(R.raw.fart);
         listRingtone.add(R.raw.harlem_shake);

@@ -5,7 +5,6 @@
     android:id="@+id/activity_count_down"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="25dp"
     tools:context="com.rstudio.minathon.minathon.view.CountdownActivity"
     android:background="@color/countdownBack"
     android:fitsSystemWindows="false">
