@@ -150,12 +150,12 @@ public class CountdownActivity extends AppCompatActivity {
         FireBase.listenGroup(Groupid, lsss);
         timeCountdown = getIntent().getIntExtra("time",15);
         ringtone = getIntent().getIntExtra("ringtone",-1);
-        listRingtone.add(R.raw.dien_may_xanh);
-        listRingtone.add(R.raw.fart);
-        listRingtone.add(R.raw.harlem_shake);
         listRingtone.add(R.raw.lac_troi);
         listRingtone.add(R.raw.ppap);
+        listRingtone.add(R.raw.fart);
         listRingtone.add(R.raw.sieu_nhan_gao);
+        listRingtone.add(R.raw.dien_may_xanh);
+        listRingtone.add(R.raw.harlem_shake);
     }
 
     private void setupToolbar(){

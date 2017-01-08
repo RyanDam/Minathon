@@ -85,22 +85,22 @@ public class CreateSingleActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rabtnPeanutDrift:
-                        checkedTone = 3;
+                        checkedTone = 0;
                         break;
                     case R.id.rabtnPPAP:
                         checkedTone = 1;
                         break;
                     case R.id.rabtnFart:
-                        checkedTone = 4;
+                        checkedTone = 2;
                         break;
                     case R.id.rabtnSuperSaiyan:
-                        checkedTone = 5;
+                        checkedTone = 3;
                         break;
                     case R.id.rabtnElectricBlue:
-                        checkedTone = 0;
+                        checkedTone = 4;
                         break;
                     case R.id.rabtnHarlemShake:
-                        checkedTone = 2;
+                        checkedTone = 5;
                         break;
                 }
             }
