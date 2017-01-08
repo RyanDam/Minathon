@@ -34,6 +34,8 @@ public class CircleTime extends View {
     int circleColor = Color.argb((int)(0.2*255), 255, 255, 255);
     int progressColor = Color.argb((int)(0.4*255), 255, 255, 255);
 
+    ValueAnimator vl;
+
     public void setProcess(float process) {
         this.process = process;
         int tt = (int)(duration * (1 - process));
@@ -66,7 +68,7 @@ public class CircleTime extends View {
 
     public void startClock(int duration, final CircleTimeListener ls) {
         this.duration = duration;
-        ValueAnimator vl = ValueAnimator.ofFloat(1f, 0f);
+        vl = ValueAnimator.ofFloat(1f, 0f);
         vl.setDuration(duration*1000);
         vl.setInterpolator(new LinearInterpolator());
         ls.onClockStart();
@@ -76,10 +78,16 @@ public class CircleTime extends View {
                 float p = ((float) valueAnimator.getAnimatedValue());
                 setProcess(p);
                 ls.onClockUpdate(p);
-                if ((int)p == 1) setProcess(p);
+                if ((int)p == 1) ls.onClockEnd();
             }
         });
         vl.start();
+    }
+
+    public void stopClock() {
+        if (vl != null && vl.isRunning()) {
+            vl.end();
+        }
     }
 
     private void setup() {
