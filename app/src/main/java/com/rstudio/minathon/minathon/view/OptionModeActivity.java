@@ -97,7 +97,7 @@ public class OptionModeActivity extends AppCompatActivity {
         btnTeamMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showActivity(JoinTeamActivity.class);
+                showActivity(CreateTeamActivity.class);
             }
         });
 
