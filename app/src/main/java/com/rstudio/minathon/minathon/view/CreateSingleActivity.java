@@ -21,7 +21,9 @@ import com.rstudio.minathon.minathon.firebase.OnConnectGroupListener;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,11 +35,11 @@ public class CreateSingleActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     @BindView(R.id.fab_create_team)
     FloatingActionButton fabCreateTeam;
-    int checkedTone = -1;
 
     private int mHours = 0;
     private int mMinutes = 10;
 
+    int checkedTone = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,35 @@ public class CreateSingleActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         ButterKnife.bind(this);
         getClickButton();
         edtDuration.setText(mHours + ":" + mMinutes);
+    }
+
+    private void getClickButton() {
+        edtDuration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog mTimePicker;
+                mTimePicker = onCreateDialogTimePicker();
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+            }
+        });
+
+        fabCreateTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createTeam();
+            }
+        });
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -77,26 +105,6 @@ public class CreateSingleActivity extends AppCompatActivity {
                 }
             }
         });
-
-    }
-
-    private void getClickButton() {
-        edtDuration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Dialog mTimePicker;
-                mTimePicker = onCreateDialogTimePicker();
-                mTimePicker.setTitle("Select Time");
-                mTimePicker.show();
-            }
-        });
-
-        fabCreateTeam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createTeam();
-            }
-        });
     }
 
     public Dialog onCreateDialogTimePicker() {
@@ -111,33 +119,25 @@ public class CreateSingleActivity extends AppCompatActivity {
         }, mHours, mMinutes, true);
     }
 
-    private void createTeam() {
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
+    private void createTeam() {
         final Group group = new Group();
 
         group.id = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
         group.startTime = Calendar.getInstance().getTimeInMillis();
         group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
+        group.tone = checkedTone;
 
-        final Dialog dia = Utils.getWaitingDialog(this);
-        dia.show();
-        FireBase.createGroup(group, new OnConnectGroupListener() {
-            @Override
-            public void onSuccessful(Group g) {
-                dia.dismiss();
-                Intent i = new Intent(getApplication(), CountdownActivity.class);
-                i.putExtra("BikeId", group.id);
-                i.putExtra("time", (int)group.duration);
-                i.putExtra("ringtone", checkedTone);
-                startActivity(i);
-            }
-            @Override
-            public void onFailure(Exception e) {
-                dia.dismiss();
-                Toast.makeText(getApplicationContext(), "An error has occured!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        Intent i = new Intent(getApplication(), CountdownActivity.class);
+        i.putExtra("BikeId", group.id);
+        i.putExtra("time", (int)group.duration);
+        i.putExtra("ringtone", checkedTone);
+        startActivity(i);
 
     }
 }
