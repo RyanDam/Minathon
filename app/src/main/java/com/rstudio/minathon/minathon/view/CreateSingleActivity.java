@@ -60,33 +60,6 @@ public class CreateSingleActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         getClickButton();
         edtDuration.setText(mHours + ":" + mMinutes);
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.rabtnPeanutDrift:
-                        checkedTone = 3;
-                        break;
-                    case R.id.rabtnPPAP:
-                        checkedTone = 1;
-                        break;
-                    case R.id.rabtnFart:
-                        checkedTone = 4;
-                        break;
-                    case R.id.rabtnSuperSaiyan:
-                        checkedTone = 5;
-                        break;
-                    case R.id.rabtnElectricBlue:
-                        checkedTone = 0;
-                        break;
-                    case R.id.rabtnHarlemShake:
-                        checkedTone = 2;
-                        break;
-                }
-            }
-        });
-
     }
 
     private void getClickButton() {
@@ -112,22 +85,22 @@ public class CreateSingleActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rabtnPeanutDrift:
-                        checkedTone = 0;
+                        checkedTone = 3;
                         break;
                     case R.id.rabtnPPAP:
                         checkedTone = 1;
                         break;
                     case R.id.rabtnFart:
-                        checkedTone = 2;
-                        break;
-                    case R.id.rabtnSuperSaiyan:
-                        checkedTone = 3;
-                        break;
-                    case R.id.rabtnElectricBlue:
                         checkedTone = 4;
                         break;
-                    case R.id.rabtnHarlemShake:
+                    case R.id.rabtnSuperSaiyan:
                         checkedTone = 5;
+                        break;
+                    case R.id.rabtnElectricBlue:
+                        checkedTone = 0;
+                        break;
+                    case R.id.rabtnHarlemShake:
+                        checkedTone = 2;
                         break;
                 }
             }
@@ -159,6 +132,9 @@ public class CreateSingleActivity extends AppCompatActivity {
         group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
         group.tone = checkedTone;
+
+        Calendar cl = Calendar.getInstance();
+        group.startTime = cl.getTimeInMillis();
 
         Intent i = new Intent(getApplication(), CountdownActivity.class);
         i.putExtra("BikeId", group.id);

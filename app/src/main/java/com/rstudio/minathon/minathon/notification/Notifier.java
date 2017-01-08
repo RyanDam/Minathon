@@ -4,6 +4,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 
+import com.rstudio.minathon.minathon.R;
+
 /**
  * Created by LazyMonster on 07/01/2017.
  */
@@ -22,7 +24,7 @@ public class Notifier {
     }
 
     public void build(String title, String content) {
-        mBuilder.setSmallIcon(android.R.drawable.sym_call_outgoing)
+        mBuilder.setSmallIcon(R.drawable.warning)
                 .setContentTitle(title)
                 .setContentText(content)
                 .setAutoCancel(false)
