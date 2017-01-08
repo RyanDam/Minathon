@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.firebase.FireBase;
+import com.rstudio.minathon.minathon.firebase.Group;
+import com.rstudio.minathon.minathon.firebase.OnListenToGroup;
 import com.rstudio.minathon.minathon.notification.AppService;
 import com.rstudio.minathon.minathon.notification.Notifier;
 import com.rstudio.minathon.minathon.view.custom.CircleTime;
@@ -40,6 +43,25 @@ public class CountdownActivity extends AppCompatActivity {
 
     boolean needNoti = true;
 
+    OnListenToGroup lsss = new OnListenToGroup() {
+        @Override
+        public void onGroupEnd(Group g) {
+            needNoti = false;
+        }
+
+        @Override
+        public void onGroupAlarm(Group g) {
+            needNoti = true;
+            mNotifier = new Notifier(CountdownActivity.this);
+            mNotifier.build("Alarm", g.alarmName + " is using the phone!");
+        }
+
+        @Override
+        public void onError(Exception e) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +81,7 @@ public class CountdownActivity extends AppCompatActivity {
         time.startClock(timeCountdown, new CircleTimeListener() {
             @Override
             public void onClockStart() {
+                needNoti = true;
                 Log.d("timerun","start");
             }
 
@@ -97,7 +120,7 @@ public class CountdownActivity extends AppCompatActivity {
         if (needNoti) {
             appState = AppService.STATE_LOCKED;
             mNotifier = new Notifier(this);
-            mNotifier.build("Hello", "Holle");
+            mNotifier.build("Warning", "Go back to Forbidden");
         }
     }
 
@@ -111,8 +134,8 @@ public class CountdownActivity extends AppCompatActivity {
     protected void onPostResume() {
         Log.d("checkvaluehehe1",timeRun+"");
         super.onPostResume();
-        appState = AppService.STATE_UNLOCKED;
         if (needNoti) {
+            appState = AppService.STATE_UNLOCKED;
             if (mNotifier != null)
                 mNotifier.dismiss();
         }
@@ -120,11 +143,11 @@ public class CountdownActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
     }
 
     private void getDataInit(){
         Groupid = getIntent().getStringExtra("BikeId");
+        FireBase.listenGroup(Groupid, lsss);
         timeCountdown = getIntent().getIntExtra("time",15);
         ringtone = getIntent().getIntExtra("ringtone",-1);
         listRingtone.add(R.raw.dien_may_xanh);

@@ -13,6 +13,9 @@ import android.view.Window;
  */
 
 public class Utils {
+
+    public static String NAME = "";
+
     public static Dialog getWaitingDialog(Activity c) {
         Dialog ret = new Dialog(c);
         LayoutInflater inf = ((LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE));

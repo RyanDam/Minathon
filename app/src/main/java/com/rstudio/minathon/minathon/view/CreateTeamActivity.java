@@ -140,6 +140,9 @@ public class CreateTeamActivity extends AppCompatActivity {
         group.startTime = Calendar.getInstance().getTimeInMillis();
         group.duration = mHours * 60 * 60 + mMinutes * 60;
         group.penaltyName = "";
+        group.tone = checkedTone;
+
+
 
         for (CheckBox x : lstCheckBox) {
             if (x.isChecked()) {
@@ -154,6 +157,7 @@ public class CreateTeamActivity extends AppCompatActivity {
             @Override
             public void onSuccessful(Group g) {
                 dia.dismiss();
+                Utils.NAME = edtUserName.getText().toString();
                 Intent i = new Intent(getApplication(), CountdownActivity.class);
                 i.putExtra("BikeId", group.id);
                 i.putExtra("time", (int)group.duration);
