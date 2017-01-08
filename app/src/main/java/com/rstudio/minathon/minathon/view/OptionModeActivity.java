@@ -1,5 +1,6 @@
 package com.rstudio.minathon.minathon.view;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -156,13 +157,15 @@ public class OptionModeActivity extends AppCompatActivity {
         final EditText edtName = (EditText) dialogView.findViewById(R.id.edtDialogName);
         final EditText edtGroupId = (EditText) dialogView.findViewById(R.id.edtDialogGroupId);
         builder.setView(dialogView);
-
         builder.setPositiveButton("Join", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                final Dialog dia = Utils.getWaitingDialog(OptionModeActivity.this);
+                dia.show();
                 FireBase.connectGroup(edtGroupId.getText().toString(), new OnConnectGroupListener() {
                     @Override
                     public void onSuccessful(Group g) {
+                        dia.dismiss();
                         Utils.NAME = edtName.getText().toString();
                         Intent i = new Intent(getApplication(), CountdownActivity.class);
                         i.putExtra("BikeId", g.id);
@@ -173,6 +176,7 @@ public class OptionModeActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Exception e) {
+                        dia.dismiss();
                         Toast.makeText(getApplication(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

@@ -147,6 +147,7 @@ public class CountdownActivity extends AppCompatActivity {
 
     private void getDataInit(){
         Groupid = getIntent().getStringExtra("BikeId");
+        getSupportActionBar().setTitle("Group id: "+Groupid);
         FireBase.listenGroup(Groupid, lsss);
         timeCountdown = getIntent().getIntExtra("time",15);
         ringtone = getIntent().getIntExtra("ringtone",-1);
@@ -161,7 +162,7 @@ public class CountdownActivity extends AppCompatActivity {
     private void setupToolbar(){
         Groupid = Groupid==null?"":Groupid;
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Group id: "+Groupid);
+
     }
 
     private void showActivity(Class activity) {
