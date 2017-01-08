@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 
 import com.rstudio.minathon.minathon.MainActivity;
 import com.rstudio.minathon.minathon.R;
+import com.rstudio.minathon.minathon.view.CountdownActivity;
 
 /**
  * Created by LazyMonster on 07/01/2017.
@@ -25,7 +26,7 @@ public class AppService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         int toneId = intent.getIntExtra("tone", R.raw.ringtone);
-        mPlayer = MediaPlayer.create(MainActivity.appInstance, toneId);
+        mPlayer = MediaPlayer.create(CountdownActivity.appInstance, toneId);
         mPlayer.setLooping(true);
 
         // loop until time is up
@@ -53,6 +54,5 @@ public class AppService extends IntentService {
                 Thread.currentThread().interrupt();
             }
         }
-
     }
 }

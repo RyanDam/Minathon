@@ -68,7 +68,7 @@ public class CircleTime extends View {
 
     public void startClock(int duration, final CircleTimeListener ls) {
         this.duration = duration;
-        vl = ValueAnimator.ofFloat(1f, 0f);
+        vl = ValueAnimator.ofFloat(0f, 1f);
         vl.setDuration(duration*1000);
         vl.setInterpolator(new LinearInterpolator());
         ls.onClockStart();
